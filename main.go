@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
 	"strings"
 
 	"github.com/gempir/go-twitch-irc/v2"
@@ -16,7 +15,7 @@ import (
 type Command struct {
 	requiredVotes int
 	currentVotes  int
-	handler       func()
+	handler       func(string)
 }
 
 func main() {
@@ -46,9 +45,10 @@ func main() {
 		"!opponent":    &Command{3, 0, gc.opponent},
 		"!dps":         &Command{3, 0, gc.dps},
 		"!sharecode":   &Command{3, 0, gc.sharecode},
+		"!buy":         &Command{3, 0, gc.buySlot},
 	}
 
-	go func(c *telnetCaller) {
+	go func() {
 		// // or client := twitch.NewAnonymousClient() for an anonymous user (no write capabilities)
 		client := twitch.NewClient(os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN"))
 
@@ -58,7 +58,9 @@ func main() {
 			for key, value := range commands {
 				if strings.HasPrefix(message.Message, key) {
 					if value.currentVotes >= value.requiredVotes {
-						value.handler()
+						argString := strings.TrimSpace(strings.TrimPrefix(message.Message, key))
+
+						value.handler(argString)
 						value.currentVotes = 0
 					} else {
 						value.currentVotes++
@@ -66,15 +68,6 @@ func main() {
 				}
 			}
 
-			if strings.HasPrefix(message.Message, "!buy") {
-				slotString := strings.TrimSpace(strings.TrimPrefix(message.Message, "!buy"))
-
-				if slot, err := strconv.Atoi(slotString); err == nil {
-					if slot >= 1 && slot <= 5 {
-						gc.buySlot(slot)
-					}
-				}
-			}
 		})
 
 		client.OnConnect(func() {
@@ -88,7 +81,7 @@ func main() {
 		if twitchErr != nil {
 			panic(twitchErr)
 		}
-	}(caller)
+	}()
 
 	err := telnet.DialToAndCall("localhost:27015", caller)
 
