@@ -1,0 +1,357 @@
+cvar list
+--------------
+dac_ability_no_cooldown : 0 : sv, cheat :
+dac_ability_no_hype : 0 : sv, cheat :
+dac_ability_no_mana : 0 : sv, cheat :
+dac_ability_refcount_modifiers : 0 : sv, cheat :
+dac_ability_void_spirit_dissimilate_exit_animation_duration : 0 : sv :
+dac_ability_void_spirit_dissimilate_radius_adjust : 0 : sv :
+dac_acknowledged_steam_announcement_gid : -2147483648 : cl, a :
+dac_activate_info_world_layer : cmd : : Activate an info world layer
+dac_active_challenge_slot_id : 2011 : cl, a :
+dac_auto_deploy_units : 0 : cl, a :
+dac_banner_base_itemdef : 0 : cl :
+dac_banner_preview_pan_multitouch : 0 : cl :
+dac_banner_preview_scale_multitouch : 10 : cl :
+dac_banner_preview_spin_drag : 0 : cl :
+dac_banner_preview_spin_multitouch : 180 : cl :
+dac_banner_preview_spin_wheel : 10 : cl :
+dac_bench_unit_angle : -58 : cl :
+dac_bench_unit_drag_distance : 800 : cl :
+dac_board_buddy_default_destRadius : 50 : cl : Board buddy default destination reached radius
+dac_board_buddy_default_movespeed : 350 : cl : Board buddy default move speed
+dac_board_buddy_default_turnRate : 20 : cl : Board buddy default turn rate (Degrees per second)
+dac_board_spray_at_cursor : cmd : :
+dac_bot_match_game_mode : 1 : cl :
+dac_bot_momma_eeb_cheats : 10 : sv :
+dac_buy_slot1 : cmd : :
+dac_buy_slot2 : cmd : :
+dac_buy_slot3 : cmd : :
+dac_buy_slot4 : cmd : :
+dac_buy_slot5 : cmd : :
+dac_camera_default_blend_duration : 4 : cl :
+dac_camera_mobile_variant_allowed : 1 : cl :
+dac_challenge_cooldown_override : 0 : cl :
+dac_challenge_map_building_anim_time : 2 : cl :
+dac_challenge_map_building_offset_factor : 0 : cl :
+dac_challenge_map_challenge_model_scale : 0 : cl :
+dac_challenge_map_claim_model_scale : 0 : cl :
+dac_challenge_map_neutral_zone_radius : 30 : cl :
+dac_challenge_map_particle_color_1 : -10526724 : cl :
+dac_challenge_map_particle_color_2 : -25633 : cl :
+dac_challenge_map_particle_color_3 : -7485185 : cl :
+dac_challenge_map_particle_color_4 : -7288470 : cl :
+dac_challenge_map_particle_color_5 : -16777216 : cl :
+dac_challenge_map_prestige_node : 0 : cl :
+dac_challenge_map_show_all_buildings : 0 : cl :
+dac_challenge_map_units_per_mousewheel : 3 : cl :
+dac_challenge_map_z_offset : 10 : cl :
+dac_characterize_combat_beats : 0 : sv : Causes the server to compute the major beats for each combat.
+dac_chat_allow_custom_messages : false : machine :
+dac_chat_message_duration : 3 : cl, a : How long a chat message should be displayed on-screen for.
+dac_chat_show_unfiltered : false : per-user :
+dac_city_crawl_dof : cmd : :
+dac_city_crawl_dof_mode : 3 : cl, a : Mode 0: Use RelativeMode: [dac_dof_crisp_range and dac_dof_blur_falloff_range]. Mode 1: Use ExplicitMode [dac_dof_near_blurry, dac_dof_near_crisp, dac_dof_far_crisp, dac_dof_far_blurry and dac_dof_tilt_to_ground ]. Mode 2: Use Blended City Crawl Camera Settings. Mode 3: use dac_dof_near_blurry_angle, dac_dof_near_crisp_angle, dac_dof_far_crisp_angle, dac_dof_far_blurry_angle
+dac_client_msg_report : cmd : : Lists all the stats regarding the raw network sends for the current game
+dac_client_net_buffer_report : cmd : : Lists all the stats regarding the net buffers associated with this game
+dac_client_solo_mm_keep_alive_check_s : 45 : cl : Number of seconds between checking to make sure that the client is still in MM
+dac_colourblind_mode : 0 : cl, a :
+dac_connect : cmd : : Connect to a server.
+dac_create_test_combat : cmd : : DAC: Create a combat
+dac_create_test_npc : cmd : : DAC: Create a test NPC
+dac_damage_floaters_offset_scale : 40 : cl :
+dac_deactivate_info_world_layer : cmd : : Deactivate a world layer
+dac_debug_dispatch_event : cmd : : <Event Name>
+dac_debug_particle_attachment_lookups : 0 : cl : Turn this on to see all the particle attachment points we tried to look up on the client.
+dac_debug_pathfinding_cells : 0 : cl :
+dac_debug_pathfinding_paths : 0 : cl :
+dac_desat_enemy_particles : 0 : cl :
+dac_destroy_npcs : cmd : : DAC: Destroy all npcs
+dac_developer_mode : 0 : cl :
+dac_dof_blur_falloff_range : 200 : cl :
+dac_dof_crisp_range : 400 : cl :
+dac_dof_far_blurry : 1600 : cl :
+dac_dof_far_blurry_angle : -28 : cl :
+dac_dof_far_crisp : 1200 : cl :
+dac_dof_far_crisp_angle : -14 : cl :
+dac_dof_near_blurry : 250 : cl :
+dac_dof_near_blurry_angle : 60 : cl :
+dac_dof_near_crisp : 550 : cl :
+dac_dof_near_crisp_angle : 30 : cl :
+dac_dof_tilt_to_ground : 0 : cl :
+dac_dof_world_cursor_influence : 0 : cl :
+dac_drag_move : 1 : cl :
+dac_draw_range_radius : cmd : : DAC: Finds a path between two vectors
+dac_draw_unit_outlines : false : machine :
+dac_dump_keybindings : 0 : cl :
+dac_duos_notification_hold_time : 5 : cl :
+dac_edit_all_underlords : 0 : cl, cheat :
+dac_fake_gc_connection_state : -1 : cl :
+dac_fake_gc_est_time : -1 : cl :
+dac_fake_gc_queue_pos : -1 : cl :
+dac_fake_poster_battlepass_level : 0 : cl : Use fake data for the battlepass level, set to any number greater than 1 to seed a different value
+dac_fake_poster_prestige_level : 0 : cl : Force prestige level on posters to be this value
+dac_filter_full : 1 : cl :
+dac_filter_offensive_text : true : machine :
+dac_force_alternate_mirrored_combat : 1 : sv : Forces the mirrored owner to alternate based on round number (for board travelling visualization)
+dac_force_camera_type : cmd : :
+dac_force_mobile_ui : 0 : cl : simulate mobile UI
+dac_force_panorama_login : 1 : cl :
+dac_force_underlord : 0 : sv : Force a specific underlord to be used.
+dac_force_underlord_slot_num : -1 : cl :
+dac_force_web_login : 0 : cl :
+dac_gamemode_puzzle_intro : 1 : cl, a : Have we seen the puzzle intro yet?.
+dac_gamemode_streetfight_intro : 1 : cl, a : Have we seen the streetfight intro yet?.
+dac_gameplay_camera_4x3_dist : 1 : cl :
+dac_gameplay_camera_fov : 90 : cl :
+dac_gameplay_camera_fov_4x3 : 96 : cl :
+dac_gameplay_camera_horizontal_multiplier : 1 : cl :
+dac_gameplay_camera_lookat_x : 0 : cl :
+dac_gameplay_camera_lookat_y : -210 : cl :
+dac_gameplay_camera_lookat_z : 64 : cl :
+dac_gameplay_camera_max_accel : 10 : cl :
+dac_gameplay_camera_max_iteration : 10 : cl :
+dac_gameplay_camera_mobile_touch_tilt : 1 : cl :
+dac_gameplay_camera_motion : 0 : cl, a : Enable or disable camera motion during combat.
+dac_gameplay_camera_new_distance : 860 : cl, a : Sets the camera distance
+dac_gameplay_camera_new_pitch : 65 : cl, a : Sets the camera pitch
+dac_gameplay_camera_npc_fov : 25 : cl :
+dac_gameplay_camera_npc_horizontal_depth : 1 : cl :
+dac_gameplay_camera_npc_inclination : -15 : cl :
+dac_gameplay_camera_npc_sq_distance_disable : 200 : cl :
+dac_gameplay_camera_use_map_camera : 1 : cl :
+dac_gameplay_camera_vertical_multiplier : 0 : cl :
+dac_gameplay_camera_yaw : 90 : cl :
+dac_generate_sharecode : cmd : : Generates a share code
+dac_glow_color_hover_ally : 0 : cl :
+dac_glow_color_hover_enemy : 0 : cl :
+dac_glow_color_negative : 1 : cl :
+dac_glow_color_selected_ally : 0 : cl :
+dac_glow_color_selected_enemy : 0 : cl :
+dac_haptic_rumble_enable : 1 : cl, a :
+dac_haptic_rumble_test_duration_ms : 50 : cl :
+dac_haptic_rumble_test_strength : 0 : cl :
+dac_health_bar_default_offset : 30 : cl :
+dac_healthbars : 1 : cl :
+dac_hp_capsule_fade_ratio : 0 : cl :
+dac_hp_cast_flash_time : 0 : cl :
+dac_hp_crit_icon_height : 24 : cl :
+dac_hp_crit_icon_width : 24 : cl :
+dac_hp_death_fade_time : 0 : cl :
+dac_hp_draw_status_icon : 1 : cl :
+dac_hp_draw_ticks : 1 : cl :
+dac_hp_draw_unit_icon : 1 : cl, a :
+dac_hp_global_scale : 0 : cl :
+dac_hp_heal_scale : 0 : cl :
+dac_hp_health_per_block : 1000 : cl :
+dac_hp_height : 8 : cl :
+dac_hp_history_time : 0 : cl :
+dac_hp_hurt_scale : 0 : cl :
+dac_hp_hype_tick_alpha : 0 : cl :
+dac_hp_hypebar_height : 8 : cl :
+dac_hp_hypebar_segments_equal_size : 1 : cl :
+dac_hp_icon_offset : 2 : cl :
+dac_hp_icon_size : 24 : cl :
+dac_hp_manabar_height : 6 : cl :
+dac_hp_manabar_offset : 0 : cl :
+dac_hp_max_width : 104 : cl :
+dac_hp_min_width : 29 : cl :
+dac_hp_miniheight : 6 : cl :
+dac_hp_offset : -4 : cl :
+dac_hp_overlap_padding : 3 : cl :
+dac_hp_shadow_opacity : 0 : cl :
+dac_hp_shadow_size : 6 : cl :
+dac_hp_star_offset : 8 : cl :
+dac_hp_star_size : 16 : cl :
+dac_hp_star_spacing : 2 : cl :
+dac_hp_status_icon_anim_amplitude : 0 : cl :
+dac_hp_status_icon_anim_period : 1 : cl :
+dac_hp_status_icon_offset : 24 : cl :
+dac_hp_status_icon_size : 36 : cl :
+dac_hp_test : 0 : cl :
+dac_hp_test_crit : 0 : cl :
+dac_hp_test_status : -1 : cl :
+dac_hp_tick_alpha : 1 : cl :
+dac_hp_underlord_height : 11 : cl :
+dac_hp_width_scale_k : 0 : cl :
+dac_hud_outro_duration : 1 : cl :
+dac_hud_rank_y_offset : 10 : cl :
+dac_hud_reload : cmd : : Fully destroy and re-create the HUD, if it's up.
+dac_iap_consume : cmd : : Purchase a purchase token
+dac_iap_get_pricing : cmd : : Get in app purchase pricing
+dac_iap_list_products : cmd : : List available products
+dac_iap_purchase : cmd : : Purchase a product
+dac_iap_query_existing_purchases : cmd : : Query existing/pending purchases
+dac_injure_player : cmd : : Reduce the health of a player by..
+dac_input_hover_over_grid_radius_mobile : 64 : cl :
+dac_input_hover_over_grid_radius_pc : 32 : cl :
+dac_input_hover_over_swept_radius_mobile : 4 : cl :
+dac_input_hover_over_swept_radius_pc : 4 : cl :
+dac_input_sharecode : cmd : : Inputs a share code
+dac_intro_test : cmd : :
+dac_invisible_mode : 0 : cl, a : Appear offline on Steam while playing
+dac_item_direct_select_hotkeys_enabled : 0 : cl :
+dac_item_select_delay : 1 : cl :
+dac_item_select_initial_delay : 1 : cl :
+dac_item_selection_ui_particle_name : 0 : cl :
+dac_kill_player : cmd : : Set the health of a player to 0.
+dac_kill_player_next_combat : cmd : : Next combat, the player will take 100 damage
+dac_leaderboard_notifications : 1 : cl : Place notifications on the leaderboard instead
+dac_local_server_hnetconnection : 0 : cl :
+dac_logo_intro_length : 2 : cl : How long to run the logo intro sequence before fading out
+dac_map_bevel_max_force : 5000 : cl :
+dac_map_cursor_constant_friction : 250 : cl :
+dac_map_cursor_linear_friction : 3 : cl :
+dac_map_prop_click_scale_amount : 0 : cl : Click spring added amount
+dac_map_prop_click_spring_duration : 0 : cl : Click spring duration
+dac_map_prop_click_spring_strength : 0 : cl : Click spring strength
+dac_map_prop_popup_duration : 1 : cl : Map prop popup duration
+dac_map_prop_spawn_spring_duration : 0 : cl : Spawn spring animation duration
+dac_map_prop_spawn_spring_rotation_degrees : 90 : cl : Spawn/death rotation degrees
+dac_map_prop_spawn_spring_strength : 0 : cl : Spawn spring strength
+dac_map_square_bevel_size : 16 : cl :
+dac_map_zoom_levels : 60 : cl :
+dac_match_intro_min_duration : 9 : cl : Adjusts how much time it takes for each player to appear in the intro sequence
+dac_match_intro_time_between_players_scalar : 0 : cl : Adjusts how much time it takes for each player to appear in the intro sequence
+dac_match_outro_duration : 3 : cl : How long to hold the outro for
+dac_mobile_drag_offset_y : -4 : cl : Vertical offset for dragging units on mobile devices as a percent of screen height.
+dac_neutral_percentage_bonus_per_standing : 0 : sv : How much more % health and damage do neutrals do for each standing over 8th (0 for 8th, 1x for 7th, 2x for 6th, 3x for 5th, etc.
+dac_notification_hold_time : 5 : cl :
+dac_notification_max : 3 : cl :
+dac_notification_upvote_enabled : 1 : cl :
+dac_notification_yocomplete_force : 0 : cl :
+dac_offline_only : 0 : cl :
+dac_pathfind_draw_cells : 0 : sv :
+dac_pathfind_enable_cache : 1 : sv :
+dac_pathfind_find_path_to_cell : cmd : : DAC: Finds a path between two points on the grid
+dac_pathfind_find_path_to_vector : cmd : : DAC: Finds a path between two vectors
+dac_play_combat_speech : 1 : cl, a :
+dac_playvcd : cmd : :
+dac_prioritize_closer_enemies_percentage : 100 : sv : Percentage chance a unit will attack the closest possible unit
+dac_profile_hide_bot_matches : 0 : cl, a :
+dac_profile_min_reward_value : 0 : cl : Min amount on the wanted poster
+dac_profile_reward_value_scalar : 1000 : cl : How much to scale each player's net worth by
+dac_recent_duos_local_bot_difficulty : 0 : cl, a : Last selected duos local bot difficulty
+dac_recent_duos_match_type : 0 : cl, a : Last selected duos match type.
+dac_recent_duos_matchmaking_type : 1 : cl, a : Last selected duos matchmaking type.
+dac_recent_duos_party_bot_difficulty : 0 : cl, a : Last selected duos party bot difficulty
+dac_recent_duos_teammate : 0 : cl, a : Last selected duos teammate
+dac_recent_selected_mode : 3 : cl, a : Last selected game mode.
+dac_recent_standard_classic : 0 : cl, a : Last selected standard classic mode
+dac_recent_standard_local_bot_difficulty : 3 : cl, a : Last selected standard local bot difficulty
+dac_recent_standard_match_type : 0 : cl, a : Last selected standard match type.
+dac_recent_standard_matchmaking_type : 1 : cl, a : Last selected standard matchmaking type.
+dac_recent_standard_party_bot_difficulty : 0 : cl, a : Last selected standard party bot difficulty
+dac_recent_training_match_type : 0 : cl, a : Last selected training match type.
+dac_recent_turbo_local_bot_difficulty : 0 : cl, a : Last selected turbo local bot difficulty
+dac_recent_turbo_match_type : 0 : cl, a : Last selected turbo match type.
+dac_recent_turbo_matchmaking_type : 4 : cl, a : Last selected turbo matchmaking type.
+dac_recent_turbo_party_bot_difficulty : 1 : cl, a : Last selected turbo party bot difficulty
+dac_reload_localization : cmd : :
+dac_replay_recording_enabled : 0 : sv : Used to control if replay is recorded or not
+dac_replay_upload_enabled : 1 : sv : Used to control if replay uploading is enabled
+dac_replay_upload_script : 0 : sv : Name of the script used to upload replay files
+dac_reward_preview_pid_constant_friction : 15 : cl :
+dac_reward_preview_pid_d_factor : 20 : cl :
+dac_reward_preview_pid_i_factor : 1 : cl :
+dac_reward_preview_pid_linear_friction : 4 : cl :
+dac_reward_preview_pid_p_factor : 200 : cl :
+dac_reward_preview_spin_drag : 0 : cl :
+dac_reward_preview_spin_multitouch : 180 : cl :
+dac_reward_preview_spin_wheel : 10 : cl :
+dac_reward_preview_starting_yaw_velocity : 1750 : cl :
+dac_right_click_move : 1 : cl :
+dac_round_over_enabled : 1 : cl :
+dac_round_over_first_hero_time : 0 : cl :
+dac_round_over_last_hero : 0 : cl :
+dac_round_over_max_defeat_banner_total_time : 3 : cl :
+dac_round_over_max_defeat_time : 1 : cl :
+dac_round_over_round_reveal_time : 0 : cl :
+dac_round_over_victory_banner_main_time : 0 : cl :
+dac_round_over_victory_banner_max_time : 5 : cl :
+dac_safe_area_notch_threshold : 32 : cl :
+dac_save_file_encoding : 0 : sv : KV3 Encoding for DAC save files. 0=Binary Compressed, 1=Text. Can load any format regardless of ConVar value.
+dac_save_shadows : -1 : cl :
+dac_save_write_on_worker_thread : 1 : sv : Whether the SaveGame disk-writing work is done on a worker thread or not.
+dac_scroll_camera_down : cmd : :
+dac_scroll_camera_up : cmd : :
+dac_scroll_enemies_down : cmd : :
+dac_scroll_enemies_up : cmd : :
+dac_selected_underlord_backup : 4 : cl, a :
+dac_selected_underlord_force_none : 0 : cl, cheat :
+dac_sell_unit : cmd : :
+dac_send_1_gold_to_teammate : cmd : :
+dac_send_5_gold_to_teammate : cmd : :
+dac_send_unit_to_bench : cmd : :
+dac_send_unit_to_teammate : cmd : :
+dac_server_msg_report : cmd : : Lists all the stats regarding the raw network sends for the current game
+dac_server_net_buffer_report : cmd : : Lists all the stats regarding the net buffers associated with this game
+dac_server_network_sendbuffersize : 1500000 : sv :
+dac_set_bc_underlord : cmd : :
+dac_shop_levelup : cmd : :
+dac_shop_lock : cmd : :
+dac_shop_reroll : cmd : :
+dac_shop_toggle : cmd : :
+dac_show_combat_chat_in_leaderboard : 0 : cl : Should player to player chats show on the leaderboard globally?
+dac_show_recommended_units_to_place : 1 : cl, a :
+dac_show_season_one_popup : cmd : :
+dac_signout_post_game_stats_log : 1 : sv : Spew the signout message for each player as they are signed out of the match
+dac_spiderling_spawn_radius : 64 : sv :
+dac_spoof_player_slot : 0 : cl, cheat :
+dac_status : cmd : : Dumps the current state of the match to the console
+dac_store_item_reservations : 0 : cl, a : The list of items that this device has a reservation on
+dac_streetfight_item_count_region1 : 1 : cl, a :
+dac_streetfight_item_count_region2 : 0 : cl, a :
+dac_streetfight_item_count_region3 : 0 : cl, a :
+dac_streetfight_item_count_region4 : 0 : cl, a :
+dac_support_grant_backoff_duration_s : 30 : cl :
+dac_synergies_hide_bench_in_combat : 1 : cl :
+dac_synergies_hide_partial_during_combat : 0 : cl, a :
+dac_tab_dps : cmd : :
+dac_tap_move : 0 : cl, a :
+dac_team_dies_as_time_expires : 0 : sv, cheat : Units will die right before time would expire, for testing non-draw long-combats
+dac_test_battle_pass_first_time : 0 : cl :
+dac_test_opponent_chat_combat : cmd : : Test chat - dac_test_player_chat <testmessage>
+dac_test_player_chat_combat : cmd : : Test chat - dac_test_player_chat <testmessage>
+dac_test_player_chat_global : cmd : : Test chat - dac_test_player_chat <testmessage>
+dac_test_prop_animation : cmd : : Test an activity on the map
+dac_test_support_grant_credits : cmd : : <amount> <description> Tests the support grant credits interface
+dac_toggle_chat : cmd : :
+dac_toggle_item_choice_picker : cmd : :
+dac_toggle_notification_debug_menu : cmd : :
+dac_toggle_scoreboard : cmd : :
+dac_traveling_camera_blend_time : 0 : cl :
+dac_traveling_camera_pos_x : 0 : cl :
+dac_traveling_camera_pos_y : -32 : cl :
+dac_traveling_camera_pos_z : 32 : cl :
+dac_tutorial_ricky_mouth_animation_interval : 0 : cl :
+dac_tutorial_text_advance_delay : 0 : cl :
+dac_ui_input_mode : 1 : machine :
+dac_ui_layout_mode : 1 : machine :
+dac_underlord_alt_voice : 0 : sv, rep :
+dac_underlord_picker_no_input_time : 1 : cl :
+dac_underlord_picker_outro_time : 1 : cl :
+dac_unit_bench_scale : 0 : cl :
+dac_unit_disable_ai : 0 : sv, cheat : Disable running AI state machine.
+dac_unit_draw_path : 0 : sv, cheat : Draw Unit's Path. Use debug name
+dac_unit_gate_walk_movement_duration : 3 : sv : Total time to allow for units to get through the gate
+dac_unit_gate_walk_movement_gate_destination_y_pos : 460 : sv : What world position to move to prior to pathing
+dac_unit_gate_walk_movement_initial_walk_distance : 700 : sv : How far behind the gate to spawn the units
+dac_unit_gate_walk_movement_speed : 300 : sv : Override unit movement speed. if -1, will use units ideal speed
+dac_unit_global_scale : 1 : cl :
+dac_unit_no_damage : 0 : sv, cheat : Disable damage for all units.
+dac_unit_server_debug : 0 : sv, cheat : Show NPC debug boxes on server.
+dac_unit_spew_combat : 0 : sv, cheat : Spew combat results.
+dac_use_simplified_ui_traces : 1 : cl : Use fixed size spheres instead of variable size hitboxes for unit selection and hover over
+dac_view_away : cmd : :
+dac_view_home : cmd : :
+dac_view_opponent : cmd : :
+dac_voluminous_combat_logging : 0 : sv : A bunch of extra server work is done to log plenty of stuff in combat.
+dac_vs_screen_hide_delay : 4 : cl :
+dac_weekly_courier_race_gold : 100 : cl, a : Gold for courier races.
+dac_write_event_cache_to_disk_on_receive : 1 : cl :
+dac_x : 0 : cl :
+dacdev_bind : cmd : : For development: Bind a key to in dcg (ALT+key) allowed.
+dacdev_binds_show : cmd : : For development: List all developer binds.
+--------------
+353 convars/concommands for [dac]
