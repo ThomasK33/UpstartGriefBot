@@ -1,31 +1,33 @@
-dac_buy_slot1 : cmd : :
-dac_buy_slot2 : cmd : :
-dac_buy_slot3 : cmd : :
-dac_buy_slot4 : cmd : :
-dac_buy_slot5 : cmd : :
-dac_shop_levelup : cmd : :
-dac_shop_lock : cmd : :
-dac_shop_reroll : cmd : :
-dac_shop_toggle : cmd : :
+# Each commented out command is already implemented into a function call
 
-dac_board_spray_at_cursor : cmd : :
-dac_sell_unit : cmd : :
-dac_send_unit_to_bench : cmd : :
+# dac_buy_slot1 : cmd : :
+# dac_buy_slot2 : cmd : :
+# dac_buy_slot3 : cmd : :
+# dac_buy_slot4 : cmd : :
+# dac_buy_slot5 : cmd : :
+# dac_shop_levelup : cmd : :
+# dac_shop_lock : cmd : :
+# dac_shop_reroll : cmd : :
+# dac_shop_toggle : cmd : :
+
+# dac_board_spray_at_cursor : cmd : :
+# dac_sell_unit : cmd : :
+# dac_send_unit_to_bench : cmd : :
 dac_set_bc_underlord : cmd : :
 
-dac_scroll_camera_down : cmd : :
-dac_scroll_camera_up : cmd : :
-dac_scroll_enemies_down : cmd : :
-dac_scroll_enemies_up : cmd : :
-dac_view_away : cmd : :
-dac_view_home : cmd : :
-dac_view_opponent : cmd : :
-dac_tab_dps : cmd : :
+# dac_scroll_camera_down : cmd : :
+# dac_scroll_camera_up : cmd : :
+# dac_scroll_enemies_down : cmd : :
+# dac_scroll_enemies_up : cmd : :
+# dac_view_away : cmd : :
+# dac_view_home : cmd : :
+# dac_view_opponent : cmd : :
+# dac_tab_dps : cmd : :
 
-dev_simulate_gcdown : cmd : : <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)
+# dev_simulate_gcdown : cmd : : <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)
 
-disconnect : cmd : : Disconnect from server
-quit : cmd : : Quit the game
+# disconnect : cmd : : Disconnect from server
+# quit : cmd : : Quit the game
 
 
-dac_generate_sharecode : cmd : : Generates a share code
+# dac_generate_sharecode : cmd : : Generates a share code
