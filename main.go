@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/ThomasK33/UpstartGriefBot/src"
 	"github.com/gempir/go-twitch-irc/v2"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/reiver/go-telnet"
@@ -19,63 +20,80 @@ type Command struct {
 }
 
 func main() {
-	caller := &telnetCaller{}
+	channelName, botName, oauthToken := os.Getenv("TWITCH_CHANNEL_NAME"), os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN")
 
-	gc := &GameCommands{
-		tc: caller,
-	}
+	caller := &src.TelnetCaller{}
+	gc := &src.GameCommands{Caller: caller}
 
 	commands := map[string]*Command{
-		"!disconnect":  &Command{3, 0, gc.disconnect},
-		"!quit":        &Command{3, 0, gc.quit},
-		"!sell":        &Command{3, 0, gc.sellUnit},
-		"!spray":       &Command{3, 0, gc.boardSpray},
-		"!benchUnit":   &Command{3, 0, gc.benchUnit},
-		"!fakeDown":    &Command{3, 0, gc.fakeGCDown},
-		"!levelup":     &Command{3, 0, gc.levelup},
-		"!lock":        &Command{3, 0, gc.lock},
-		"!reroll":      &Command{3, 0, gc.reroll},
-		"!toggle":      &Command{3, 0, gc.toggle},
-		"!cameraDown":  &Command{3, 0, gc.cameraDown},
-		"!cameraUp":    &Command{3, 0, gc.cameraUp},
-		"!enemiesDown": &Command{3, 0, gc.enemiesDown},
-		"!enemiesUp":   &Command{3, 0, gc.enemiesUp},
-		"!away":        &Command{3, 0, gc.away},
-		"!home":        &Command{3, 0, gc.home},
-		"!opponent":    &Command{3, 0, gc.opponent},
-		"!dps":         &Command{3, 0, gc.dps},
-		"!sharecode":   &Command{3, 0, gc.sharecode},
-		"!buy":         &Command{3, 0, gc.buySlot},
+		"!disconnect":  {3, 0, gc.Disconnect},
+		"!quit":        {3, 0, gc.Quit},
+		"!buy":         {3, 0, gc.BuySlot},
+		"!sell":        {3, 0, gc.SellUnit},
+		"!spray":       {3, 0, gc.BoardSpray},
+		"!benchUnit":   {3, 0, gc.BenchUnit},
+		"!fakeDown":    {3, 0, gc.FakeGCDown},
+		"!levelup":     {3, 0, gc.Levelup},
+		"!lock":        {3, 0, gc.Lock},
+		"!reroll":      {3, 0, gc.Reroll},
+		"!toggle":      {1, 0, gc.Toggle},
+		"!cameraDown":  {3, 0, gc.CameraDown},
+		"!cameraUp":    {3, 0, gc.CameraUp},
+		"!enemiesDown": {3, 0, gc.EnemiesDown},
+		"!enemiesUp":   {3, 0, gc.EnemiesUp},
+		"!away":        {3, 0, gc.Away},
+		"!home":        {3, 0, gc.Home},
+		"!opponent":    {3, 0, gc.Opponent},
+		"!dps":         {3, 0, gc.Dps},
+		"!sharecode":   {3, 0, gc.Sharecode},
 	}
 
+	// TODO: Refactor this into person specific counter
+	// counter := map[string]map[string]time.Time{}
+	// counter["greycodes"] = map[string]time.Time{}
+	// counter["greycodes"]["!buy"] = time.Now()
+
 	go func() {
-		// // or client := twitch.NewAnonymousClient() for an anonymous user (no write capabilities)
-		client := twitch.NewClient(os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN"))
+		client := twitch.NewClient(botName, oauthToken)
 
 		client.OnPrivateMessage(func(message twitch.PrivateMessage) {
 			fmt.Println(message.Message)
 
 			for key, value := range commands {
 				if strings.HasPrefix(message.Message, key) {
+					value.currentVotes++
+
 					if value.currentVotes >= value.requiredVotes {
 						argString := strings.TrimSpace(strings.TrimPrefix(message.Message, key))
 
 						value.handler(argString)
 						value.currentVotes = 0
+
+						client.Say(channelName, "Executed "+key)
 					} else {
-						value.currentVotes++
+						client.Say(channelName, "Need "+fmt.Sprint(value.requiredVotes-value.currentVotes)+" more votes to execute "+key)
 					}
 				}
 			}
 
+			if strings.HasPrefix(message.Message, "!help") {
+				var builder strings.Builder
+
+				builder.WriteString("!help")
+				for key := range commands {
+					builder.WriteString(", " + key)
+				}
+
+				client.Say(channelName, "Following commands are available: "+builder.String())
+			}
 		})
 
 		client.OnConnect(func() {
 			fmt.Println("Connected to Twitch")
-			client.Say(os.Getenv("TWITCH_CHANNEL_NAME"), "Bring it on!")
+			client.Say(channelName, "Bring it on!")
 		})
 
-		client.Join(os.Getenv("TWITCH_CHANNEL_NAME"))
+		client.Join(channelName)
 
 		twitchErr := client.Connect()
 		if twitchErr != nil {

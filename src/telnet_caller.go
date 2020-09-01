@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"bufio"
@@ -9,12 +9,16 @@ import (
 	"github.com/reiver/go-telnet"
 )
 
-type telnetCaller struct {
-	w *telnet.Writer
+// TelnetCaller - Custom TelnetCaller structure
+type TelnetCaller struct {
+	Writer *telnet.Writer
+	Reader *telnet.Reader
 }
 
-func (c *telnetCaller) CallTELNET(ctx telnet.Context, w telnet.Writer, r telnet.Reader) {
-	c.w = &w
+// CallTELNET - Override library function
+func (c *TelnetCaller) CallTELNET(ctx telnet.Context, w telnet.Writer, r telnet.Reader) {
+	c.Writer = &w
+	c.Reader = &r
 
 	go func(writer io.Writer, reader io.Reader) {
 
