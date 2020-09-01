@@ -15,7 +15,7 @@ type TelnetCaller struct {
 	Reader *telnet.Reader
 }
 
-// CallTELNET - Override library function
+// CallTELNET - Custom CallTELNET implementation
 func (c *TelnetCaller) CallTELNET(ctx telnet.Context, w telnet.Writer, r telnet.Reader) {
 	c.Writer = &w
 	c.Reader = &r
