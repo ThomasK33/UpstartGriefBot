@@ -53,7 +53,7 @@ go-install:
 	go install $(GOFILES)
 
 go-run:
-	go run $(GOFILES)
+	go run $(LDFLAGS) $(GOFILES)
 
 go-clean:
 	@echo "  >  Cleaning build cache"

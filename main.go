@@ -12,6 +12,13 @@ import (
 	"github.com/reiver/go-telnet"
 )
 
+var (
+	// Version - Version number
+	Version string
+	// Build - Build number
+	Build string
+)
+
 // Command - Twitch Command structure
 type Command struct {
 	requiredVotes int
@@ -20,6 +27,8 @@ type Command struct {
 }
 
 func main() {
+	log.Println("Starting " + Version + " (" + Build + ")")
+
 	channelName, botName, oauthToken := os.Getenv("TWITCH_CHANNEL_NAME"), os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN")
 
 	caller := &src.TelnetCaller{}
@@ -57,7 +66,7 @@ func main() {
 		client := twitch.NewClient(botName, oauthToken)
 
 		client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-			fmt.Println(message.Message)
+			log.Println(message.Message)
 
 			for key, value := range commands {
 				if strings.HasPrefix(message.Message, key) {
@@ -89,7 +98,7 @@ func main() {
 		})
 
 		client.OnConnect(func() {
-			fmt.Println("Connected to Twitch")
+			log.Println("Connected to Twitch")
 			client.Say(channelName, "Bring it on!")
 		})
 
