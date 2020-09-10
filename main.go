@@ -12,11 +12,10 @@ import (
 	"github.com/reiver/go-telnet"
 )
 
+// Version and build vars linked at compile time
 var (
-	// Version - Version number
 	Version string
-	// Build - Build number
-	Build string
+	Build   string
 )
 
 // Command - Twitch Command structure
