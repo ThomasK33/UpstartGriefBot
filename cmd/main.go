@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ThomasK33/UpstartGriefBot/src"
+	"github.com/ThomasK33/UpstartGriefBot/pkg/underlords"
 	"github.com/gempir/go-twitch-irc/v2"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/reiver/go-telnet"
@@ -30,8 +30,8 @@ func main() {
 
 	channelName, botName, oauthToken := os.Getenv("TWITCH_CHANNEL_NAME"), os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN")
 
-	caller := &src.TelnetCaller{}
-	gc := &src.GameCommands{Caller: caller}
+	caller := &underlords.TelnetCaller{}
+	gc := &underlords.GameCommands{Caller: caller}
 
 	commands := map[string]*Command{
 		"!disconnect":  {3, 0, gc.Disconnect},

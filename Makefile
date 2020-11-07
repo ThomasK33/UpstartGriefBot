@@ -5,7 +5,7 @@ BUILD := $(shell git rev-parse --short HEAD)
 PROJECTNAME := $(shell basename "$(PWD)")
 
 # Go related variables.
-GOFILES := $(wildcard *.go)
+GOFILES := $(wildcard cmd/*.go)
 
 # Use linker flags to provide version/build settings
 LDFLAGS=-ldflags "-X=main.Version=$(VERSION) -X=main.Build=$(BUILD)"
@@ -47,7 +47,7 @@ go-generate:
 
 go-get:
 	@echo "  >  Checking if there is any missing dependencies..."
-	go get $(get)
+	go get $(get) -v all
 
 go-install:
 	go install $(GOFILES)

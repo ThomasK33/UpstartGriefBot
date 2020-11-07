@@ -1,4 +1,4 @@
-package src
+package underlords
 
 import (
 	"fmt"
