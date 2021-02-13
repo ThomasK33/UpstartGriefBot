@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 
 	"github.com/ThomasK33/UpstartGriefBot/pkg/underlords"
 	"github.com/gempir/go-twitch-irc/v2"
@@ -29,6 +31,7 @@ func main() {
 	log.Println("Starting " + Version + " (" + Build + ")")
 
 	channelName, botName, oauthToken := os.Getenv("TWITCH_CHANNEL_NAME"), os.Getenv("TWITCH_BOT_NAME"), os.Getenv("TWITCH_OAUTH_TOKEN")
+	telnetServerAddress, isTelnetServerAddressSet := os.LookupEnv("TELNET_ADDRESS")
 
 	caller := &underlords.TelnetCaller{}
 	gc := &underlords.GameCommands{Caller: caller}
@@ -105,13 +108,26 @@ func main() {
 
 		twitchErr := client.Connect()
 		if twitchErr != nil {
+			log.Println("An error occurred while connecting to Twitch")
 			panic(twitchErr)
 		}
 	}()
 
-	err := telnet.DialToAndCall("localhost:27015", caller)
+	if !isTelnetServerAddressSet {
+		telnetServerAddress = "localhost:27015"
+	}
+
+	log.Println("Connecting to " + telnetServerAddress)
+
+	err := telnet.DialToAndCall(telnetServerAddress, caller)
 
 	if err != nil {
+		log.Println("An error occurred while connecting to the telnet server")
 		log.Fatal(err)
 	}
+
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+
+	<-c
 }

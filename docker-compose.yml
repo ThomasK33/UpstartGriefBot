@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  discord-webhook:
+    image: upstartgriefbot:0.1.0
+    build: .
+
+    environment:
+      TWITCH_BOT_NAME: ${TWITCH_BOT_NAME}
+      TWITCH_OAUTH_TOKEN: ${TWITCH_OAUTH_TOKEN}
+      TWITCH_CHANNEL_NAME: ${TWITCH_CHANNEL_NAME}
+      TELNET_ADDRESS: host.docker.internal:27015
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

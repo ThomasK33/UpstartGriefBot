@@ -16,19 +16,19 @@ STDERR := /tmp/.$(PROJECTNAME)-stderr.txt
 # Make is verbose in Linux. Make it silent.
 MAKEFLAGS += --silent
 
+## compile: Compile the binary.
+compile:
+	@-touch $(STDERR)
+	@-rm $(STDERR)
+	@-$(MAKE) -s go-compile 2> $(STDERR)
+	@cat $(STDERR)
+
 ## install: Install missing dependencies. Runs `go get` internally. e.g; make install get=github.com/foo/bar
 install: go-get
 
 ## run: Run the application
 run:
 	@-$(MAKE) go-run
-
-## compile: Compile the binary.
-compile:
-	@-touch $(STDERR)
-	@-rm $(STDERR)
-	@-$(MAKE) -s go-compile 2> $(STDERR)
-	@cat $(STDERR) | sed -e '1s/.*/\nError:\n/'  | sed 's/make\[.*/ /' | sed "/^/s/^/     /" 1>&2
 
 ## clean: Clean build files. Runs `go clean` internally.
 clean:
