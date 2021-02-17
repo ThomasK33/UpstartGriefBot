@@ -39,7 +39,11 @@ func main() {
 	commands := map[string]*Command{
 		"!disconnect":  {3, 0, gc.Disconnect},
 		"!quit":        {3, 0, gc.Quit},
-		"!buy":         {3, 0, gc.BuySlot},
+		"!buy 1":       {3, 0, gc.BuySlot},
+		"!buy 2":       {3, 0, gc.BuySlot},
+		"!buy 3":       {3, 0, gc.BuySlot},
+		"!buy 4":       {3, 0, gc.BuySlot},
+		"!buy 5":       {3, 0, gc.BuySlot},
 		"!sell":        {3, 0, gc.SellUnit},
 		"!spray":       {3, 0, gc.BoardSpray},
 		"!benchUnit":   {3, 0, gc.BenchUnit},
@@ -56,7 +60,7 @@ func main() {
 		"!home":        {3, 0, gc.Home},
 		"!opponent":    {3, 0, gc.Opponent},
 		"!dps":         {3, 0, gc.Dps},
-		"!sharecode":   {3, 0, gc.Sharecode},
+		"!code":        {3, 0, gc.Sharecode},
 	}
 
 	// TODO: Refactor this into person specific counter
@@ -75,7 +79,9 @@ func main() {
 					value.currentVotes++
 
 					if value.currentVotes >= value.requiredVotes {
-						argString := strings.TrimSpace(strings.TrimPrefix(message.Message, key))
+						argString := strings.TrimSpace(message.Message)
+						argStrings := strings.Fields(argString)
+						argString = strings.Join(argStrings[1:], " ")
 
 						value.handler(argString)
 						value.currentVotes = 0
@@ -95,7 +101,15 @@ func main() {
 					builder.WriteString(", " + key)
 				}
 
+				builder.WriteString(", " + "!keep")
+
 				client.Say(channelName, "Following commands are available: "+builder.String())
+			}
+
+			if strings.HasPrefix(message.Message, "!keep") {
+				if commands["!sell"].currentVotes > 0 {
+					commands["!sell"].currentVotes--
+				}
 			}
 		})
 

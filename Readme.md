@@ -90,6 +90,6 @@ This might have future uses for e.g. automated camera movement in Dota 2 (in con
 
 This project is not affiliated with Valve or Steam.
 
-Valve, the Valve logo, Steam, the Steam logo, Source, the Source logo, Dota, the Dota 2 logo, Defense of the Ancients, Dota Underlords and the Dota Underlords logo are trademarks and/or registered trademarks of Valve Corporation
+Valve, the Valve logo, Steam, the Steam logo, Source, the Source logo, Dota, the Dota 2 logo, Defense of the Ancients, Dota Underlords and the Dota Underlords logo are trademarks and/or registered trademarks of Valve Corporation.
 
 TWITCH, the TWITCH Logo, the Glitch Logo, and/or TWITCHTV are trademarks of Twitch Interactive, Inc. or its affiliates.
