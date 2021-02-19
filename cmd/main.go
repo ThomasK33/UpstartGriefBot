@@ -60,7 +60,7 @@ func main() {
 		"!home":        {3, 0, gc.Home},
 		"!opponent":    {3, 0, gc.Opponent},
 		"!dps":         {3, 0, gc.Dps},
-		"!code":        {3, 0, gc.Sharecode},
+		// "!code":        {3, 0, gc.Sharecode},
 	}
 
 	// TODO: Refactor this into person specific counter
@@ -72,7 +72,7 @@ func main() {
 		client := twitch.NewClient(botName, oauthToken)
 
 		client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-			log.Println(message.Message)
+			log.Println(message.User.DisplayName, message.Message)
 
 			for key, value := range commands {
 				if strings.HasPrefix(message.Message, key) {
@@ -110,7 +110,17 @@ func main() {
 				if commands["!sell"].currentVotes > 0 {
 					commands["!sell"].currentVotes--
 				}
+				client.Say(channelName, "Need "+fmt.Sprint(commands["!sell"].requiredVotes-commands["!sell"].currentVotes)+" more votes to execute !sell")
 			}
+
+			isBroadcaster := message.User.Badges["broadcaster"] != 0
+			if isBroadcaster {
+				if strings.HasPrefix(message.Message, "!vote") {
+					commands["!sell"].currentVotes = 0
+					client.Say(channelName, "Reset sell vote count to 0")
+				}
+			}
+
 		})
 
 		client.OnConnect(func() {
