@@ -52,7 +52,17 @@ Then fill in the required values in the `.env` file.
 
 ### Steam
 
+#### Unix
+
 Head over to Underlords on Steam and set the following [game launch options](https://support.steampowered.com/kb_article.php?ref=1040-JWMT-2947): `-netconport 27015 +developer 1`
+
+#### Windows
+
+On Windows please set the following launch options `-netconport 2121 +developer 1` and add this line to the .env file:
+
+```env
+TELNET_ADDRESS=127.0.0.1:2121
+```
 
 After successfully setting the launch options, start Underlords before proceeding with one of the two following steps:
 

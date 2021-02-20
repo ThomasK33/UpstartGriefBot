@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"sort"
 	"strings"
 	"syscall"
 
@@ -96,12 +97,19 @@ func main() {
 			if strings.HasPrefix(message.Message, "!help") {
 				var builder strings.Builder
 
-				builder.WriteString("!help")
-				for key := range commands {
-					builder.WriteString(", " + key)
+				keys := make([]string, 0, len(commands)+2)
+				for k := range commands {
+					keys = append(keys, k)
 				}
+				keys = append(keys, "!help")
+				keys = append(keys, "!keep")
+				keys = append(keys, "!voteReset")
 
-				builder.WriteString(", " + "!keep")
+				sort.Strings(keys)
+
+				for _, key := range keys {
+					builder.WriteString(key + ", ")
+				}
 
 				client.Say(channelName, "Following commands are available: "+builder.String())
 			}
@@ -115,7 +123,7 @@ func main() {
 
 			isBroadcaster := message.User.Badges["broadcaster"] != 0
 			if isBroadcaster {
-				if strings.HasPrefix(message.Message, "!vote") {
+				if strings.HasPrefix(message.Message, "!voteReset") {
 					commands["!sell"].currentVotes = 0
 					client.Say(channelName, "Reset sell vote count to 0")
 				}
