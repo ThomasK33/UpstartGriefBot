@@ -1,6 +1,6 @@
 module github.com/ThomasK33/UpstartGriefBot
 
-go 1.15
+go 1.18
 
 require (
 	github.com/gempir/go-twitch-irc/v2 v2.8.1
