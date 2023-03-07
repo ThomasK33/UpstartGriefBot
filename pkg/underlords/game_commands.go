@@ -16,10 +16,10 @@ type GameCommands struct {
 // SendCommand - Function writing commands to the game console
 func (gc *GameCommands) SendCommand(command string) {
 	if gc.Caller != nil && gc.Caller.Writer != nil {
-		oi.LongWrite(*gc.Caller.Writer, []byte("dac_test_player_chat_global "+command))
-		oi.LongWrite(*gc.Caller.Writer, []byte("\n"))
-		oi.LongWrite(*gc.Caller.Writer, []byte(command))
-		oi.LongWrite(*gc.Caller.Writer, []byte("\n"))
+		_, _ = oi.LongWrite(*gc.Caller.Writer, []byte("dac_test_player_chat_global "+command))
+		_, _ = oi.LongWrite(*gc.Caller.Writer, []byte("\n"))
+		_, _ = oi.LongWrite(*gc.Caller.Writer, []byte(command))
+		_, _ = oi.LongWrite(*gc.Caller.Writer, []byte("\n"))
 	}
 }
 

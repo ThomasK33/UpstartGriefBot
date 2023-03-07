@@ -1,15 +1,5 @@
-github.com/gempir/go-twitch-irc/v2 v2.4.2 h1:tdOTkbPlhCsT0flJeN/Cw90o2c+Vb9FZslj8VTSGYtM=
-github.com/gempir/go-twitch-irc/v2 v2.4.2/go.mod h1:120d2SdlRYg8tRnZwsyNPeS+mWPn+YmNEzB7Bv/CDGE=
-github.com/gempir/go-twitch-irc/v2 v2.5.0 h1:aybXNoyDNQaa4vHhXb0UpIDmspqutQUmXIYUFsjgecU=
-github.com/gempir/go-twitch-irc/v2 v2.5.0/go.mod h1:120d2SdlRYg8tRnZwsyNPeS+mWPn+YmNEzB7Bv/CDGE=
-github.com/gempir/go-twitch-irc/v2 v2.6.0 h1:pgO9g2RV9kBo+iK4OkCAc16gVG+p4uRX/O0bhqP0ibw=
-github.com/gempir/go-twitch-irc/v2 v2.6.0/go.mod h1:120d2SdlRYg8tRnZwsyNPeS+mWPn+YmNEzB7Bv/CDGE=
-github.com/gempir/go-twitch-irc/v2 v2.7.0 h1:SBHeA1SL6TCHS3DeIFdyq3IOp3yKIZSB3TrHY6RRFc4=
-github.com/gempir/go-twitch-irc/v2 v2.7.0/go.mod h1:120d2SdlRYg8tRnZwsyNPeS+mWPn+YmNEzB7Bv/CDGE=
 github.com/gempir/go-twitch-irc/v2 v2.8.1 h1:M0Rt2ODGPEk33+UEwv2XSrnGMMwVyUoBt+MNI3ZVf8c=
 github.com/gempir/go-twitch-irc/v2 v2.8.1/go.mod h1:120d2SdlRYg8tRnZwsyNPeS+mWPn+YmNEzB7Bv/CDGE=
-github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
-github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
 github.com/joho/godotenv v1.4.0/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/reiver/go-oi v1.0.0 h1:nvECWD7LF+vOs8leNGV/ww+F2iZKf3EYjYZ527turzM=

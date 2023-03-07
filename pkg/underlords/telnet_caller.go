@@ -34,13 +34,13 @@ func (c *TelnetCaller) CallTELNET(ctx telnet.Context, w telnet.Writer, r telnet.
 				break
 			}
 
-			oi.LongWrite(writer, p)
+			_, _ = oi.LongWrite(writer, p)
 		}
 	}(os.Stdout, r)
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
-		oi.LongWrite(w, scanner.Bytes())
-		oi.LongWrite(w, []byte("\n"))
+		_, _ = oi.LongWrite(w, scanner.Bytes())
+		_, _ = oi.LongWrite(w, []byte("\n"))
 	}
 }
