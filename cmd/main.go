@@ -10,7 +10,7 @@ import (
 	"syscall"
 
 	"github.com/ThomasK33/UpstartGriefBot/pkg/underlords"
-	"github.com/gempir/go-twitch-irc/v2"
+	"github.com/gempir/go-twitch-irc/v4"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/reiver/go-telnet"
 )
