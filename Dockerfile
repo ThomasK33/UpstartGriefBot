@@ -1,5 +1,5 @@
 # --- Build image ---
-FROM golang:1.23.3-alpine AS build
+FROM golang:1.23.4-alpine AS build
 
 RUN apk --no-cache add ca-certificates git make bash
 
